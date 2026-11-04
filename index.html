@@ -101,6 +101,48 @@
       .nav-links{background:#f6f3ed;border-bottom-color:#ded7c9}
     }
 
+  
+    /* macsur-motion-system: restrained scientific motion, no external animation libraries */
+    .hero-visual{isolation:isolate}
+    .molecular-orbit{position:absolute;z-index:1;width:min(78%,500px);height:auto;right:-3%;top:50%;transform:translateY(-50%);overflow:visible;opacity:.78;pointer-events:none;filter:drop-shadow(0 4px 18px #10292335)}
+    .orbit-ring{transform-box:fill-box;transform-origin:center;animation:orbit-drift 32s linear infinite}
+    .orbit-two{animation-duration:40s;animation-direction:reverse}
+    .orbit-three{animation-duration:48s}
+    .orbit-dot{transform-box:fill-box;transform-origin:center;animation:node-pulse 3.8s ease-in-out infinite}
+    .dot-b{animation-delay:1.2s}.dot-c{animation-delay:2.1s}
+    @keyframes orbit-drift{to{rotate:360deg}}
+    @keyframes node-pulse{0%,100%{opacity:.55;scale:.85}50%{opacity:1;scale:1.3}}
+    .quality{isolation:isolate}
+    .quality-network{position:absolute;z-index:0;width:min(70%,680px);height:auto;right:-7%;top:50%;transform:translateY(-50%);opacity:.16;pointer-events:none}
+    .quality-network circle{animation:network-glow 4.5s ease-in-out infinite}
+    .quality-network circle:nth-child(3n){animation-delay:1.4s}
+    @keyframes network-glow{0%,100%{opacity:.4}50%{opacity:1}}
+    .cap-card{position:relative;overflow:hidden;isolation:isolate}
+    .dosage-art{position:absolute;right:23px;top:23px;width:62px;height:62px;display:grid;place-items:center;opacity:.92;transition:transform .45s cubic-bezier(.2,.75,.25,1)}
+    .cap-card:hover .dosage-art{transform:translateY(-5px) rotate(-7deg)}
+    .tablet-art:before{content:"";width:39px;height:39px;border-radius:50%;background:linear-gradient(145deg,#fffefa,#d9c9a8);border:1px solid #bba77d;box-shadow:inset -4px -5px 8px #9e895c30,0 8px 16px #17352f12}
+    .tablet-art i{position:absolute;width:30px;height:1px;background:#b49a68;transform:rotate(-38deg)}
+    .capsule-art:before{content:"";width:49px;height:22px;border-radius:20px;background:linear-gradient(90deg,#d8c49b 0 49%,#fffefa 50%);border:1px solid #b49a68;transform:rotate(-38deg);box-shadow:0 7px 14px #17352f16}
+    .capsule-art i{position:absolute;width:1px;height:22px;background:#b49a68;transform:rotate(-38deg)}
+    .powder-art:before{content:"";position:absolute;width:34px;height:35px;bottom:8px;border:1.5px solid #b49a68;border-top:0;border-radius:4px 4px 9px 9px;background:linear-gradient(0deg,#d8c49b 0 40%,#fffefa 41%);box-shadow:0 7px 14px #17352f12}
+    .powder-art i{position:absolute;z-index:1;top:10px;width:39px;height:7px;border-radius:3px;background:#b49a68}
+    .powder-art b{position:absolute;z-index:2;top:5px;width:18px;height:7px;border-radius:2px;background:#17352f}
+    .js-motion .reveal-item{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.25,1)}
+    .js-motion .reveal-item.is-visible{opacity:1;transform:translateY(0)}
+    .js-motion .reveal-item[data-reveal-delay="1"]{transition-delay:.1s}
+    .js-motion .reveal-item[data-reveal-delay="2"]{transition-delay:.2s}
+    .js-motion .reveal-item[data-reveal-delay="3"]{transition-delay:.3s}
+    @media(max-width:700px){
+      .molecular-orbit{width:76%;right:-5%;top:50%;opacity:.62}
+      .quality-network{width:115%;right:-30%;opacity:.12}
+      .dosage-art{right:17px;top:17px;transform:scale(.86)}
+      .cap-card:hover .dosage-art{transform:scale(.9) translateY(-3px)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .orbit-ring,.orbit-dot,.quality-network circle{animation:none!important}
+      .js-motion .reveal-item,.js-motion .reveal-item.is-visible{opacity:1;transform:none;transition:none}
+    }
+
   </style>
 </head>
 <body>
@@ -134,6 +176,19 @@
         </div>
         <div class="hero-visual">
           <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=1400&q=85" alt="Illustrative laboratory-style stock photograph representing pharmaceutical science" fetchpriority="high" decoding="async">
+          <svg class="molecular-orbit" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+            <defs><linearGradient id="orbitGold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ead8ae"/><stop offset="1" stop-color="#b49a68"/></linearGradient></defs>
+            <g fill="none" stroke="url(#orbitGold)" stroke-width="1.15">
+              <ellipse class="orbit-ring orbit-one" cx="260" cy="260" rx="178" ry="82" transform="rotate(-32 260 260)"/>
+              <ellipse class="orbit-ring orbit-two" cx="260" cy="260" rx="178" ry="82" transform="rotate(48 260 260)"/>
+              <ellipse class="orbit-ring orbit-three" cx="260" cy="260" rx="178" ry="82" transform="rotate(108 260 260)"/>
+              <path d="M260 260 117 178M260 260 397 150M260 260 384 368M260 260 146 392" opacity=".5"/>
+            </g>
+            <g fill="#d7c49b" stroke="#17352f" stroke-width="4">
+              <circle cx="260" cy="260" r="15"/><circle cx="117" cy="178" r="8"/><circle cx="397" cy="150" r="7"/><circle cx="384" cy="368" r="9"/><circle cx="146" cy="392" r="7"/>
+            </g>
+            <g fill="#f1e7d1"><circle class="orbit-dot dot-a" cx="260" cy="178" r="5"/><circle class="orbit-dot dot-b" cx="337" cy="260" r="4"/><circle class="orbit-dot dot-c" cx="182" cy="306" r="5"/></g>
+          </svg>
           <div class="visual-caption"><div><small>Science · Manufacturing · Responsibility</small><strong>Macsur Pharmaa</strong></div><span class="visual-index">01 / 04</span></div>
         </div>
       </div>
@@ -173,15 +228,21 @@
         <div class="section-heading"><span class="eyebrow">Manufacturing overview</span><h2>Capabilities deserve clear, accurate communication.</h2><p>Explore the dosage-form categories referenced in publicly available historical records. These references are not confirmation of current production or product availability.</p></div>
       </div>
       <div class="cap-grid">
-        <article class="cap-card"><span class="cap-num">01 / DOSAGE FORM</span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m8 4 12 12a4.2 4.2 0 0 1-6 6L2 10a4.2 4.2 0 0 1 6-6Z" transform="translate(0 -1)" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Tablets</h3><p>Solid oral dosage form category referenced in historical public records. Current product and production details require company confirmation.</p></article>
-        <article class="cap-card"><span class="cap-num">02 / DOSAGE FORM</span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.8 5.8a6.8 6.8 0 0 1 9.6 0l4 4a6.8 6.8 0 0 1-9.6 9.6l-4-4a6.8 6.8 0 0 1 0-9.6Z" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Capsules</h3><p>Capsule dosage form category appearing in historical references. Specific formats and current capabilities should be validated directly.</p></article>
-        <article class="cap-card"><span class="cap-num">03 / DOSAGE FORM</span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14l-1 13H6L5 7Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 7h16M9 7V4h6v3M9 11v5M15 11v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Powders</h3><p>Powder dosage form category referenced in historical records. Product range, facility details and availability are subject to confirmation.</p></article>
+        <article class="cap-card"><span class="cap-num">01 / DOSAGE FORM</span><span class="dosage-art tablet-art" aria-hidden="true"><i></i></span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m8 4 12 12a4.2 4.2 0 0 1-6 6L2 10a4.2 4.2 0 0 1 6-6Z" transform="translate(0 -1)" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Tablets</h3><p>Solid oral dosage form category referenced in historical public records. Current product and production details require company confirmation.</p></article>
+        <article class="cap-card"><span class="cap-num">02 / DOSAGE FORM</span><span class="dosage-art capsule-art" aria-hidden="true"><i></i></span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.8 5.8a6.8 6.8 0 0 1 9.6 0l4 4a6.8 6.8 0 0 1-9.6 9.6l-4-4a6.8 6.8 0 0 1 0-9.6Z" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Capsules</h3><p>Capsule dosage form category appearing in historical references. Specific formats and current capabilities should be validated directly.</p></article>
+        <article class="cap-card"><span class="cap-num">03 / DOSAGE FORM</span><span class="dosage-art powder-art" aria-hidden="true"><i></i><b></b></span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14l-1 13H6L5 7Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 7h16M9 7V4h6v3M9 11v5M15 11v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Powders</h3><p>Powder dosage form category referenced in historical records. Product range, facility details and availability are subject to confirmation.</p></article>
       </div>
       <p class="cap-footnote">Important: These are historical public-record references, not a representation of current licences, approved products, manufacturing capacity or active operations.</p>
     </div>
   </section>
   <section class="quality" id="quality">
     <div class="container quality-grid">
+      <svg class="quality-network" viewBox="0 0 680 430" aria-hidden="true" focusable="false">
+        <g fill="none" stroke="#d1b987" stroke-width="1">
+          <path d="M35 92 145 42 250 105 355 48 475 112 625 54M35 92 92 220 210 250 250 105M145 42 210 250 355 48M250 105 350 205 475 112 560 260M355 48 430 320 560 260 625 54M92 220 150 365 280 340 350 205 430 320 560 260M150 365 280 340 430 320"/>
+        </g>
+        <g fill="#d1b987"><circle cx="35" cy="92" r="4"/><circle cx="145" cy="42" r="5"/><circle cx="250" cy="105" r="4"/><circle cx="355" cy="48" r="5"/><circle cx="475" cy="112" r="4"/><circle cx="625" cy="54" r="4"/><circle cx="92" cy="220" r="5"/><circle cx="210" cy="250" r="4"/><circle cx="350" cy="205" r="5"/><circle cx="560" cy="260" r="5"/><circle cx="150" cy="365" r="4"/><circle cx="280" cy="340" r="5"/><circle cx="430" cy="320" r="4"/></g>
+      </svg>
       <div class="quality-copy"><span class="eyebrow">Quality & responsibility</span><h2>Trust is built on evidence, not adjectives.</h2><p>Pharmaceutical quality statements must be specific, current and verifiable. We have intentionally avoided displaying unverified certifications, approvals or quality claims in this demonstration.</p><div class="quality-note">The company can use this section to publish its approved quality policy, facility standards, certifications and compliance information after documentary verification.</div></div>
       <div class="quality-points">
         <div class="quality-point"><span>01 / POLICY</span><strong>Quality policy</strong><p>Publish the company-approved quality policy and its current revision.</p></div>
@@ -243,6 +304,26 @@
   navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰';}));
   document.getElementById('year').textContent=new Date().getFullYear();
   document.getElementById('enquiryForm').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const subject=encodeURIComponent('Business enquiry — Macsur Pharmaa');const body=encodeURIComponent('Name: '+form.get('name')+'\nOrganisation: '+(form.get('organisation')||'Not provided')+'\nEmail: '+form.get('email')+'\nEnquiry type: '+form.get('interest')+'\n\nMessage:\n'+form.get('message'));window.location.href='mailto:macsurpharmaa@gmail.com?subject='+subject+'&body='+body;});
+
+  // Progressive-enhancement scroll reveals: content stays visible if JS or observers are unavailable.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealTargets = document.querySelectorAll('.section-heading, .intro-copy, .intro-visual, .cap-card, .quality-copy, .quality-point, .evidence-panel, .contact-copy, .contact-card, .fact');
+    revealTargets.forEach((el,index) => {
+      el.classList.add('reveal-item');
+      if (el.matches('.cap-card,.quality-point,.fact')) el.dataset.revealDelay = String((index % 3) + 1);
+    });
+    document.documentElement.classList.add('js-motion');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -35px 0px'});
+    revealTargets.forEach(el => revealObserver.observe(el));
+  }
+
 </script>
 </body>
 </html>
