@@ -1,71 +1,65 @@
-# Macsur Pharmaa — Website Demo
+# Macsur Pharmaa — Corporate Website Demo
 
-A responsive, single-page corporate website concept for **Macsur Pharmaa (India) Private Limited**, built with plain HTML, CSS and JavaScript.
+A premium, mobile-first corporate website concept for **Macsur Pharmaa (India) Private Limited**, built with semantic HTML, CSS and vanilla JavaScript.
 
 ## Preview
 
-After GitHub Pages is enabled, the demo will be available at:
+Expected GitHub Pages address:
 
 https://viviberi.github.io/macsur-pharmaa/
 
-## Built with
+The repository's Pages site has to be enabled once before the deployment workflow can publish the website. See **Enable GitHub Pages** below.
 
-- Static HTML, CSS and vanilla JavaScript
-- Responsive, mobile-first layout
-- No paid website builder or runtime dependency
-- GitHub Actions deployment to GitHub Pages
+## Design direction
 
-## Publish the demo
+The site uses a restrained pharmaceutical/biotech corporate visual system:
 
-1. Open **Settings → Pages** in this repository.
+- Clinical white, soft mineral green, deep blue and teal
+- Editorial split hero rather than a large empty dark banner
+- Clear company, capabilities, quality, evidence and contact sections
+- Responsive layouts designed for mobile first
+- Keyboard skip link, descriptive image alternatives and reduced-motion awareness
+- No fabricated certifications, capacity figures, export claims or current regulatory approvals
+
+## Technology
+
+- Static HTML, CSS and vanilla JavaScript — no framework or build dependency
+- GitHub Actions quality checks on pushes and pull requests
+- GitHub Pages deployment workflow
+- SVG favicon, robots.txt and XML sitemap
+- No third-party form service or server-side storage
+
+## Enable GitHub Pages (one-time repository setting)
+
+The deployment workflow currently cannot publish because the repository does not yet have a Pages site configured. This is a one-time GitHub repository setting that requires an owner/admin action:
+
+1. Open [Settings → Pages](https://github.com/ViviBeri/macsur-pharmaa/settings/pages).
 2. Under **Build and deployment → Source**, select **GitHub Actions**.
-3. The workflow in `.github/workflows/deploy-pages.yml` deploys the site on every push to `main`.
-4. Open the **Actions** tab to check the deployment. The Pages URL will appear in the workflow run and repository Pages settings.
+3. Save if GitHub displays a Save button.
+4. Open the [Actions tab](https://github.com/ViviBeri/macsur-pharmaa/actions). The next push or manual workflow run will deploy the site.
 
-## Important content notes
+The standard workflow token can deploy after Pages is enabled; it cannot create the Pages site itself.
 
-This is a **demonstration concept**, not an approved company website. It uses publicly available company and regulatory references. Historical CDSCO entries are dated and are not represented as proof of current certificates, licences, product availability or approvals. The product and dosage-form details, contact information, address, and all claims should be reviewed and approved by Macsur Pharmaa before any commercial launch.
+## Automated checks and deployment
 
-The enquiry form opens the visitor's email application using `mailto:`; it does not store or submit data to a server.
+Workflow: `.github/workflows/deploy-pages.yml`
 
-## Customisation
+- `quality-check` runs on pushes and pull requests.
+- `scripts/validate-site.mjs` checks core document metadata, the single H1, unique IDs, internal anchor targets, image alt attributes, safe external links and required support files.
+- Deployment runs after quality checks on pushes to `main` and manual workflow dispatch.
+- Only the production website files are uploaded to Pages; repository documentation and design notes are not published.
 
-Edit `index.html` directly in GitHub's web editor. Save changes to `main` and GitHub Actions will redeploy the site automatically once Pages is configured.
+## Before presenting to Macsur Pharmaa
 
+This is a demonstration concept, not a company-approved production website. Please review [CLIENT-APPROVAL-CHECKLIST.md](CLIENT-APPROVAL-CHECKLIST.md) with the company. In particular, obtain approved facility photographs and verify every company, product, manufacturing, quality and regulatory statement.
+
+### Important content safeguards
+
+- Historical public-record references are not proof of current licences, certifications, active manufacturing, approved products or present-day availability.
+- The tablets, capsules and powders sections are explicitly qualified as historical dosage-form references and must be confirmed by the company.
+- Address, email, CIN and legal company details must be checked against current company records before launch.
+- The enquiry form opens the visitor's email application using `mailto:`; it does not transmit to a server or store submissions. A production lead form needs an approved, privacy-compliant submission service.
 
 ## 21st.dev CLI
 
-This project is prepared to use the 21st.dev component catalog and CLI.
-
-### Local sign-in (one time)
-
-Install Node.js/npm if they are not already available, then run:
-
-```bash
-npm i -g @21st-dev/cli
-21st login
-21st whoami
-```
-
-The login opens a browser and stores the session on your local machine. Do not commit the local authentication file or paste an API key into repository files.
-
-Useful project commands:
-
-```bash
-21st search "pharma manufacturing website hero"
-21st search "healthcare quality assurance section"
-21st review index.html
-```
-
-### GitHub Actions (headless)
-
-The manual workflow at `.github/workflows/21st-catalog.yml` runs a catalog search without interactive login.
-
-1. Open **Settings → Secrets and variables → Actions**.
-2. Select **New repository secret**.
-3. Name it `API_KEY_21ST` and paste your 21st.dev API key as the value.
-4. Open **Actions → 21st.dev catalog search → Run workflow** and enter a component/pattern query.
-
-The workflow passes the secret through the `API_KEY_21ST` environment variable and never writes it into the repository. Generate/manage the key at https://21st.dev/settings/api-keys.
-
-**Usage note:** 21st.dev search is free; retrieving/installing component code has a free daily quota (currently 2 per day on the free account). Hosted AI generation is separate and consumes AI credits.
+21st.dev is optional. This website is intentionally framework-free, so components should only be introduced where they provide a measurable design or usability benefit. Local browser-based sign-in and the headless CI workflow are documented in the repository's earlier setup notes; a 21st.dev API key must be stored as a GitHub Actions secret named `API_KEY_21ST`, never committed to source.
