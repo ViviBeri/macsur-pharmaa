@@ -301,7 +301,36 @@
     .brand-symbol svg{display:block;width:42px;height:42px;overflow:visible}
     .footer-brand .brand-symbol{background:transparent!important}
     @media(max-width:420px){.brand-symbol,.brand-symbol svg{width:42px;height:42px;flex-basis:42px}}
-  </style>
+  
+    /* Contrast correction: the monogram must remain visible on both light and dark surfaces */
+    .header .brand-monogram{fill:#17352f}
+    .footer-brand .brand-monogram{fill:#f6f3ed}
+
+    /* Desktop-mode mobile browsers can report a wide layout viewport; prevent clipped layouts */
+    @media(max-width:1024px){
+      .nav-links{display:none;position:absolute;top:69px;left:0;right:0;background:#f6f3ed;padding:20px 24px 24px;border-bottom:1px solid var(--line);box-shadow:0 15px 25px #123b4b10;flex-direction:column;align-items:flex-start;gap:17px}
+      .nav-links.open{display:flex}
+      .menu{display:block}
+      .nav-cta{display:none}
+      .hero-shell{display:flex;flex-direction:column;min-height:0}
+      .hero-copy{padding:46px 38px 34px}
+      .hero h1{font-size:clamp(3rem,8vw,4.6rem)}
+      .hero-visual{min-height:320px}
+      .intro-grid,.quality-grid,.contact-grid{grid-template-columns:1fr;gap:38px}
+      .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .facts-grid{grid-template-columns:1fr}
+      .fact{border-right:0;border-bottom:1px solid var(--line)}
+      .fact:last-child{border-bottom:0}
+      .footer-main{flex-wrap:wrap}
+    }
+    @media(max-width:700px){
+      .hero-copy{padding:39px 25px 30px}
+      .hero h1{font-size:clamp(2.65rem,12vw,3.75rem)}
+      .hero-visual{min-height:255px}
+      .cap-grid{grid-template-columns:1fr}
+    }
+    html,body{max-width:100%;overflow-x:hidden}
+\n  </style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -310,7 +339,7 @@
     <a class="brand" href="#home" aria-label="Macsur Pharmaa home">
       <span class="brand-symbol"><svg viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false">
   <defs><linearGradient id="brandGold" x1="12" y1="74" x2="83" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#b18d4e"/><stop offset=".52" stop-color="#e0c58e"/><stop offset="1" stop-color="#a9874e"/></linearGradient></defs>
-  <path d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z" fill="#f6f3ed"/>
+  <path class="brand-monogram" d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z" fill="#f6f3ed"/>
   <path d="M10 70c19 10 49 7 72-14" stroke="url(#brandGold)" stroke-width="5" stroke-linecap="round"/>
   <path d="M43 39c10-16 23-20 37-17-4 14-14 25-31 25" fill="#7eaa62" stroke="#d8c18f" stroke-width="1.5" stroke-linejoin="round"/>
   <path d="M47 45c8-7 17-13 27-18" stroke="#f6f3ed" stroke-width="1.6" stroke-linecap="round"/>
@@ -460,7 +489,7 @@
   <div class="footer-main">
     <div class="footer-brand"><a class="brand" href="#home"><span class="brand-symbol"><svg viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false">
   <defs><linearGradient id="brandGoldFooter" x1="12" y1="74" x2="83" y2="18" gradientUnits="userSpaceOnUse"><stop stop-color="#b18d4e"/><stop offset=".52" stop-color="#e0c58e"/><stop offset="1" stop-color="#a9874e"/></linearGradient></defs>
-  <path d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z" fill="#f6f3ed"/>
+  <path class="brand-monogram" d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z" fill="#f6f3ed"/>
   <path d="M10 70c19 10 49 7 72-14" stroke="url(#brandGold)" stroke-width="5" stroke-linecap="round"/>
   <path d="M43 39c10-16 23-20 37-17-4 14-14 25-31 25" fill="#7eaa62" stroke="#d8c18f" stroke-width="1.5" stroke-linejoin="round"/>
   <path d="M47 45c8-7 17-13 27-18" stroke="#f6f3ed" stroke-width="1.6" stroke-linecap="round"/>
