@@ -62,4 +62,4 @@ This is a demonstration concept, not a company-approved production website. Plea
 
 ## 21st.dev CLI
 
-21st.dev is optional. This website is intentionally framework-free, so components should only be introduced where they provide a measurable design or usability benefit. Local browser-based sign-in and the headless CI workflow are documented in the repository's earlier setup notes; a 21st.dev API key must be stored as a GitHub Actions secret named `API_KEY_21ST`, never committed to source.
+21st.dev is optional. This website is intentionally framework-free, so components should only be introduced where they provide a measurable design or usability benefit. To use the CLI locally, run `npm i -g @21st-dev/cli` and `21st login`, then search with `21st search "pharma manufacturing website"`. The manual CI workflow `.github/workflows/21st-catalog.yml` runs the documented `21st search` command with `--api-key` from the repository secret `API_KEY_21ST`. Search is free; free accounts currently have two component-code retrievals per day. Never commit API keys.
