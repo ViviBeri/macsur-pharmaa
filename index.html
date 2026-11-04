@@ -143,6 +143,39 @@
       .js-motion .reveal-item,.js-motion .reveal-item.is-visible{opacity:1;transform:none;transition:none}
     }
 
+  
+    /* Placement refinement: decorative motion stays inside its own visual areas */
+    .hero-visual{position:relative;isolation:isolate}
+    .hero-visual>img{z-index:0}
+    .molecular-orbit{
+      z-index:1;
+      width:min(46%,310px);
+      right:4%;
+      top:48%;
+      opacity:.34;
+      filter:none;
+    }
+    .visual-caption{z-index:2}
+    .quality-grid{isolation:isolate}
+    .quality-network{
+      z-index:0;
+      width:min(43%,390px);
+      right:1%;
+      top:52%;
+      opacity:.075;
+    }
+    .quality-copy,.quality-points{position:relative;z-index:1}
+    /* Animate the existing dosage icons instead of adding new layout elements */
+    .cap-icon{transition:transform .35s ease,background .35s ease}
+    .cap-card:hover .cap-icon{transform:translateY(-3px);background:#e9dfca}
+    @media(max-width:700px){
+      .molecular-orbit{width:40%;right:3%;top:48%;opacity:.24}
+      .quality-network{width:52%;right:-5%;top:50%;opacity:.06}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .cap-icon,.cap-card:hover .cap-icon{transition:none;transform:none}
+    }
+
   </style>
 </head>
 <body>
@@ -228,9 +261,9 @@
         <div class="section-heading"><span class="eyebrow">Manufacturing overview</span><h2>Capabilities deserve clear, accurate communication.</h2><p>Explore the dosage-form categories referenced in publicly available historical records. These references are not confirmation of current production or product availability.</p></div>
       </div>
       <div class="cap-grid">
-        <article class="cap-card"><span class="cap-num">01 / DOSAGE FORM</span><span class="dosage-art tablet-art" aria-hidden="true"><i></i></span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m8 4 12 12a4.2 4.2 0 0 1-6 6L2 10a4.2 4.2 0 0 1 6-6Z" transform="translate(0 -1)" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Tablets</h3><p>Solid oral dosage form category referenced in historical public records. Current product and production details require company confirmation.</p></article>
-        <article class="cap-card"><span class="cap-num">02 / DOSAGE FORM</span><span class="dosage-art capsule-art" aria-hidden="true"><i></i></span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.8 5.8a6.8 6.8 0 0 1 9.6 0l4 4a6.8 6.8 0 0 1-9.6 9.6l-4-4a6.8 6.8 0 0 1 0-9.6Z" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Capsules</h3><p>Capsule dosage form category appearing in historical references. Specific formats and current capabilities should be validated directly.</p></article>
-        <article class="cap-card"><span class="cap-num">03 / DOSAGE FORM</span><span class="dosage-art powder-art" aria-hidden="true"><i></i><b></b></span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14l-1 13H6L5 7Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 7h16M9 7V4h6v3M9 11v5M15 11v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Powders</h3><p>Powder dosage form category referenced in historical records. Product range, facility details and availability are subject to confirmation.</p></article>
+        <article class="cap-card"><span class="cap-num">01 / DOSAGE FORM</span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m8 4 12 12a4.2 4.2 0 0 1-6 6L2 10a4.2 4.2 0 0 1 6-6Z" transform="translate(0 -1)" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Tablets</h3><p>Solid oral dosage form category referenced in historical public records. Current product and production details require company confirmation.</p></article>
+        <article class="cap-card"><span class="cap-num">02 / DOSAGE FORM</span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4.8 5.8a6.8 6.8 0 0 1 9.6 0l4 4a6.8 6.8 0 0 1-9.6 9.6l-4-4a6.8 6.8 0 0 1 0-9.6Z" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Capsules</h3><p>Capsule dosage form category appearing in historical references. Specific formats and current capabilities should be validated directly.</p></article>
+        <article class="cap-card"><span class="cap-num">03 / DOSAGE FORM</span><span class="cap-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14l-1 13H6L5 7Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 7h16M9 7V4h6v3M9 11v5M15 11v5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Powders</h3><p>Powder dosage form category referenced in historical records. Product range, facility details and availability are subject to confirmation.</p></article>
       </div>
       <p class="cap-footnote">Important: These are historical public-record references, not a representation of current licences, approved products, manufacturing capacity or active operations.</p>
     </div>
