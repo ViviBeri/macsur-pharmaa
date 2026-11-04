@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Macsur Pharmaa emblem</title>
+  <desc id="desc">A geometric M monogram with a botanical leaf and a pharmaceutical capsule, in ivory and champagne gold.</desc>
+  <defs>
+    <linearGradient id="gold" x1="12" y1="74" x2="83" y2="18" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#b18d4e"/>
+      <stop offset=".52" stop-color="#e0c58e"/>
+      <stop offset="1" stop-color="#a9874e"/>
+    </linearGradient>
+  </defs>
+  <path d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z" fill="#f6f3ed"/>
+  <path d="M10 70c19 10 49 7 72-14" fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M43 39c10-16 23-20 37-17-4 14-14 25-31 25" fill="#7eaa62" stroke="#d8c18f" stroke-width="1.5" stroke-linejoin="round"/>
+  <path d="M47 45c8-7 17-13 27-18" fill="none" stroke="#f6f3ed" stroke-width="1.6" stroke-linecap="round"/>
+  <g transform="rotate(-38 57 65)">
+    <rect x="49" y="56" width="16" height="28" rx="8" fill="url(#gold)" stroke="#f6f3ed" stroke-width="2"/>
+    <path d="M49 70h16" stroke="#17352f" stroke-width="1.6"/>
+    <path d="M51 60a5 5 0 0 1 5-3h2v12h-9V62a2 2 0 0 1 2-2Z" fill="#17352f" opacity=".9"/>
+  </g>
+</svg>
