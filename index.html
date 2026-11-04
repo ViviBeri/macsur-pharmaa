@@ -171,6 +171,81 @@
       .cap-card .cap-icon svg{animation:none!important;transition:none!important;transform:none!important}
     }
 
+  
+    /* Animated molecular network: slow scientific signal flow, not a distracting particle effect */
+    .quality-network g:first-child path{
+      stroke-dasharray:7 13;
+      animation:molecular-flow 26s linear infinite;
+    }
+    .quality-network circle{
+      transform-box:fill-box;
+      transform-origin:center;
+      animation:network-glow 4.5s ease-in-out infinite,molecular-pulse 5.5s ease-in-out infinite;
+    }
+    @keyframes molecular-flow{to{stroke-dashoffset:-220}}
+    @keyframes molecular-pulse{0%,100%{transform:scale(.82)}50%{transform:scale(1.18)}}
+
+    /* Blur-to-clear scroll reveal */
+    .js-motion .reveal-item{
+      filter:blur(7px);
+      transform:translateY(22px);
+      transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.25,1),filter .72s ease;
+    }
+    .js-motion .reveal-item.is-visible{filter:blur(0);transform:translateY(0)}
+
+    /* Restrained champagne light sweep on capability cards and primary actions */
+    .cap-card{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .cap-card>*{position:relative;z-index:1}
+    .cap-card::after{
+      content:"";
+      position:absolute;
+      z-index:0;
+      top:-45%;
+      left:-65%;
+      width:42%;
+      height:190%;
+      pointer-events:none;
+      opacity:0;
+      transform:skewX(-19deg);
+      background:linear-gradient(90deg,transparent,#d1b98738,transparent);
+    }
+    .cap-card:hover::after{opacity:1;animation:card-light-sweep .85s ease-out}
+    .btn{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .btn>*{position:relative;z-index:1}
+    .btn::after{
+      content:"";
+      position:absolute;
+      z-index:0;
+      top:-70%;
+      left:-65%;
+      width:38%;
+      height:240%;
+      pointer-events:none;
+      opacity:0;
+      transform:skewX(-20deg);
+      background:linear-gradient(90deg,transparent,#fffefa55,transparent);
+    }
+    .btn:hover::after,.btn:focus-visible::after{opacity:1;animation:button-light-sweep .8s ease-out}
+    @keyframes card-light-sweep{from{left:-65%}to{left:135%}}
+    @keyframes button-light-sweep{from{left:-65%}to{left:135%}}
+
+    @media(prefers-reduced-motion:reduce){
+      .quality-network g:first-child path,
+      .quality-network circle{animation:none!important}
+      .js-motion .reveal-item,.js-motion .reveal-item.is-visible{
+        opacity:1;filter:none;transform:none;transition:none;
+      }
+      .cap-card::after,.btn::after{display:none!important;animation:none!important}
+    }
+
   </style>
 </head>
 <body>
