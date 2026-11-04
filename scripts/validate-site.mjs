@@ -51,4 +51,4 @@ if (errors.length) {
 }
 
 console.log("Website validation passed.");
-console.log(`Checked one page, ${ids.length} IDs, ${(html.match(/<a\\b/gi) || []).length} links, and required support files.`);
+console.log(`Checked one page, ${ids.length} IDs, ${(html.match(/<a\b/gi) || []).length} links, and required support files.`);
