@@ -29,4 +29,4 @@ jobs:
             echo "::error::Add API_KEY_21ST under Settings > Secrets and variables > Actions."
             exit 1
           fi
-          npx --yes @21st-dev/cli@latest search "$SEARCH_QUERY" --api-key "$API_KEY_21ST" --json
+          npx --yes @21st-dev/cli@latest search "$SEARCH_QUERY" --api-key "$API_KEY_21ST"
