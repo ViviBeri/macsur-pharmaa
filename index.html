@@ -149,6 +149,28 @@
       .intro-visual{min-height:350px}
     }
 
+  
+    /* Dosage-form motion: animate the existing capability icons in place */
+    .cap-card .cap-icon svg{transform-box:fill-box;transform-origin:center;will-change:transform}
+    .cap-card:nth-child(1) .cap-icon svg,
+    .cap-card:nth-child(2) .cap-icon svg,
+    .cap-card:nth-child(3) .cap-icon svg{transition:transform .35s cubic-bezier(.2,.7,.25,1)}
+    .cap-card:nth-child(1):hover .cap-icon svg,
+    .cap-card:nth-child(1):focus-within .cap-icon svg{transform:translateY(-3px) rotate(-8deg)}
+    .cap-card:nth-child(2):hover .cap-icon svg,
+    .cap-card:nth-child(2):focus-within .cap-icon svg{transform:translateY(-3px) rotate(8deg)}
+    .cap-card:nth-child(3):hover .cap-icon svg,
+    .cap-card:nth-child(3):focus-within .cap-icon svg{transform:translateY(-4px) scale(1.06)}
+    .cap-card.is-visible:nth-child(1) .cap-icon svg{animation:tablet-arrive .72s cubic-bezier(.2,.75,.25,1) both}
+    .cap-card.is-visible:nth-child(2) .cap-icon svg{animation:capsule-arrive .78s cubic-bezier(.2,.75,.25,1) both}
+    .cap-card.is-visible:nth-child(3) .cap-icon svg{animation:powder-arrive .72s cubic-bezier(.2,.75,.25,1) both}
+    @keyframes tablet-arrive{0%{opacity:.5;transform:translateY(8px) rotate(-22deg) scale(.82)}65%{opacity:1;transform:translateY(-2px) rotate(5deg) scale(1.08)}100%{transform:translateY(0) rotate(0) scale(1)}}
+    @keyframes capsule-arrive{0%{opacity:.5;transform:translateY(8px) rotate(24deg) scale(.82)}65%{opacity:1;transform:translateY(-2px) rotate(-6deg) scale(1.08)}100%{transform:translateY(0) rotate(0) scale(1)}}
+    @keyframes powder-arrive{0%{opacity:.5;transform:translateY(10px) scale(.78)}65%{opacity:1;transform:translateY(-3px) scale(1.1)}100%{transform:translateY(0) scale(1)}}
+    @media(prefers-reduced-motion:reduce){
+      .cap-card .cap-icon svg{animation:none!important;transition:none!important;transform:none!important}
+    }
+
   </style>
 </head>
 <body>
