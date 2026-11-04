@@ -1,0 +1,32 @@
+name: 21st.dev catalog search
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: Component or UI pattern to search for
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Search 21st.dev
+        env:
+          API_KEY_21ST: ${{ secrets.API_KEY_21ST }}
+          SEARCH_QUERY: ${{ inputs.query }}
+        run: |
+          if [ -z "$API_KEY_21ST" ]; then
+            echo "::error::Add API_KEY_21ST under Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          npx --yes @21st-dev/cli@latest search "$SEARCH_QUERY" --api-key "$API_KEY_21ST" --json
