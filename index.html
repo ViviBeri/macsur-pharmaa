@@ -121,6 +121,34 @@
     .js-motion .reveal-item[data-reveal-delay="3"]{transition-delay:.3s}
     @media(prefers-reduced-motion:reduce){.js-motion .reveal-item,.js-motion .reveal-item.is-visible{opacity:1;transform:none;transition:none}}
 
+  
+    /* Tablet and narrow-screen layout guard: prevent desktop grids from clipping */
+    @media(max-width:900px){
+      .hero-shell{display:flex;flex-direction:column;min-height:0}
+      .hero-copy{padding:54px 42px 42px}
+      .hero-visual{min-height:340px}
+      .intro-grid,.quality-grid,.contact-grid{grid-template-columns:1fr;gap:38px}
+      .intro-visual{min-height:390px;order:2}
+      .intro-copy{order:1}
+      .quality-points{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .evidence-panel{grid-template-columns:1fr}
+      .cap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .facts-grid{grid-template-columns:1fr}
+      .fact{border-right:0;border-bottom:1px solid var(--line)}
+      .fact:last-child{border-bottom:0}
+      .footer-main{flex-wrap:wrap}
+    }
+    @media(max-width:700px){
+      .hero-copy{padding:39px 25px 30px}
+      .hero-visual{min-height:255px}
+      .cap-grid{grid-template-columns:1fr}
+      .quality-points{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:420px){
+      .quality-points{grid-template-columns:1fr}
+      .intro-visual{min-height:350px}
+    }
+
   </style>
 </head>
 <body>
