@@ -133,6 +133,19 @@
     @media(max-width:800px){.timeline{grid-template-columns:1fr 1fr}}
     @media(max-width:600px){.timeline{grid-template-columns:1fr}.demo-intro{align-items:flex-start}}
 
+  
+    /* Fix: force every tile rail into a single horizontal track. */
+    .tile-rail{width:100%;min-width:0;max-width:100%;overflow:hidden}
+    .tile-track{display:grid!important;grid-template-columns:unset!important;grid-template-rows:1fr!important;grid-auto-flow:column!important;grid-auto-columns:minmax(280px,340px)!important;align-items:stretch;width:100%;min-width:0;overflow-x:auto!important;overflow-y:hidden!important;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-padding-inline:4px;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y;scrollbar-width:thin;scrollbar-color:var(--gold) #e8e4da;padding:10px 4px 22px}
+    .tile-track>*{width:100%;min-width:0;max-width:none;grid-row:1;scroll-snap-align:start}
+    .tile-controls{position:relative;z-index:2;display:flex;justify-content:flex-end;gap:9px;margin:0 0 10px}
+    .tile-arrow{flex:0 0 42px;pointer-events:auto;touch-action:manipulation}
+    .tile-arrow:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    .tile-track .quality-card,.tile-track .form-card,.tile-track .category-card,.tile-track .approach-card,.tile-track .insight-card{height:100%;min-height:190px}
+    @media(max-width:900px){.tile-track{grid-auto-columns:minmax(270px,42%)!important}}
+    @media(max-width:600px){.tile-track{grid-auto-columns: minmax(82vw,82vw)!important;gap:12px;padding-bottom:18px}.tile-controls{justify-content:flex-end}.tile-arrow{flex-basis:40px;width:40px;height:40px}}
+    @media(prefers-reduced-motion:reduce){.tile-track{scroll-behavior:auto!important}}
+
   </style>
 </head>
 <body>
@@ -337,26 +350,22 @@
     document.getElementById('year').textContent=new Date().getFullYear();
     document.getElementById('enquiryForm').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const subject=encodeURIComponent('Business enquiry — Macsur Pharmaa');const body=encodeURIComponent('Name: '+form.get('name')+'\nOrganisation: '+(form.get('organisation')||'Not provided')+'\nEmail: '+form.get('email')+'\nEnquiry type: '+form.get('interest')+'\n\nMessage:\n'+form.get('message'));window.location.href='mailto:macsurpharmaa@gmail.com?subject='+subject+'&body='+body;});
 
-    // Horizontal, touch-friendly tile rails with accessible previous/next controls.
-    document.querySelectorAll('.categories .category-grid,.approach .approach-grid,#quality .quality-cards,.forms .forms-grid,#insights .insights-grid').forEach((track,index)=>{
-      track.classList.add('tile-track');
-      const rail=document.createElement('div');rail.className='tile-rail';
-      track.parentNode.insertBefore(rail,track);rail.appendChild(track);
-      const controls=document.createElement('div');controls.className='tile-controls';
-      controls.innerHTML='<button class="tile-arrow" type="button" aria-label="Scroll cards left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll cards right">›</button>';
-      rail.insertBefore(controls,track);
-      const arrows=controls.querySelectorAll('button');
-      arrows[0].dataset.scrollBound='true';arrows[1].dataset.scrollBound='true';
-      arrows[0].addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'}));
-      arrows[1].addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'}));
-    });
-
+    // Consistent horizontal rails: bind controls to the exact rail they belong to.
     document.querySelectorAll('.tile-rail').forEach(rail=>{
       const track=rail.querySelector('.tile-track');
       if(!track)return;
-      const arrows=rail.querySelectorAll('.tile-arrow:not([data-scroll-bound])');
-      if(arrows[0]){arrows[0].dataset.scrollBound='true';arrows[0].addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'}));}
-      if(arrows[1]){arrows[1].dataset.scrollBound='true';arrows[1].addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'}));}
+      const [previous,next]=rail.querySelectorAll('.tile-arrow');
+      const updateControls=()=>{
+        const max=track.scrollWidth-track.clientWidth;
+        if(previous)previous.disabled=track.scrollLeft<=2;
+        if(next)next.disabled=track.scrollLeft>=max-2;
+        rail.classList.toggle('has-overflow',max>4);
+      };
+      previous?.addEventListener('click',()=>track.scrollBy({left:-Math.max(240,track.clientWidth*.85),behavior:'smooth'}));
+      next?.addEventListener('click',()=>track.scrollBy({left:Math.max(240,track.clientWidth*.85),behavior:'smooth'}));
+      track.addEventListener('scroll',updateControls,{passive:true});
+      window.addEventListener('resize',updateControls,{passive:true});
+      requestAnimationFrame(updateControls);
     });
 
     const siteHeader=document.querySelector('.header');
