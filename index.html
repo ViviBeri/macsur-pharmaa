@@ -51,6 +51,33 @@
     @media(prefers-reduced-motion:reduce){.hero-copy>*,.hero-visual img{animation:none!important}.motion-ready .reveal{opacity:1!important;transform:none!important;transition:none!important}.approach-card,.quality-card,.form-card,.insight-card,.btn,.insight-card img{transition:none!important}}
 
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+  
+    /* Premium horizontal tile rails */
+    .tile-rail{position:relative;margin-top:10px}
+    .tile-track{display:grid;grid-auto-columns:minmax(260px,1fr);grid-auto-flow:column;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 3px 22px;scrollbar-width:thin;scrollbar-color:var(--gold) #e8e4da}
+    .tile-track>*{min-width:0;scroll-snap-align:start}
+    .tile-controls{display:flex;justify-content:flex-end;gap:9px;margin:-2px 0 12px}
+    .tile-arrow{width:42px;height:42px;border:1px solid #cfc7b7;background:var(--white);color:var(--green);border-radius:50%;font-size:1.25rem;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+    .tile-arrow:hover{background:var(--green);color:#fff;border-color:var(--green);transform:translateY(-2px)}
+    .tile-track .category-card,.tile-track .approach-card,.tile-track .quality-card,.tile-track .form-card,.tile-track .insight-card{height:100%;box-shadow:0 8px 24px #172e250a;transition:transform .28s,box-shadow .28s}
+    .tile-track .category-card:hover,.tile-track .approach-card:hover,.tile-track .quality-card:hover,.tile-track .form-card:hover,.tile-track .insight-card:hover{transform:translateY(-5px);box-shadow:0 18px 36px #172e2518}
+    .category-card,.insight-card{display:flex;flex-direction:column}.category-body,.insight-body{flex:1}
+    .partnership{background:#102c25;color:#f7f5ef;position:relative;overflow:hidden}
+    .partnership:before{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff12;border-radius:50%;right:-130px;top:-210px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05}
+    .partnership .section-head h2{color:#fffdf5}.partnership .section-head p{color:#c3d0c6}
+    .partner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;position:relative}
+    .partner-card{padding:25px;background:#ffffff0b;border:1px solid #ffffff20;border-radius:7px;min-height:190px}
+    .partner-card span{color:#d8c18f;font-size:.68rem;letter-spacing:.14em;font-weight:800}
+    .partner-card h3{font:600 1.35rem "Playfair Display",serif;margin:17px 0 8px;color:#fff}
+    .partner-card p{font-size:.8rem;color:#c4d0c7;margin:0}
+    .company-details{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+    .company-detail{padding:17px;border:1px solid var(--line);background:#fffefa;border-radius:5px}
+    .company-detail small{display:block;color:#9a8151;text-transform:uppercase;letter-spacing:.12em;font-size:.62rem;font-weight:800}
+    .company-detail strong{display:block;font-size:.88rem;margin-top:6px}
+    @media(max-width:900px){.tile-track{grid-auto-columns:minmax(245px,42%)}.partner-grid{grid-template-columns:1fr 1fr}.company-details{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.tile-track{grid-auto-columns:minmax(82%,82%);gap:12px;padding-bottom:17px}.tile-controls{justify-content:flex-start}.tile-arrow{width:39px;height:39px}.partner-grid{grid-template-columns:1fr}.partner-card{min-height:0}.company-details{grid-template-columns:1fr 1fr}.company-detail{padding:13px}}
+    @media(prefers-reduced-motion:reduce){.tile-track{scroll-behavior:auto}.tile-arrow,.tile-track>*{transition:none}}
+
   </style>
 </head>
 <body>
@@ -89,7 +116,13 @@
     </div></section>
     <section class="section" id="company"><div class="container about-grid">
       <div class="about-visual"><div class="about-photo"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1100&q=85" alt="Illustrative pharmaceutical laboratory stock photograph, not a company facility" loading="lazy"></div><div class="about-stamp"><small>Company identity</small><strong>A pharmaceutical presence rooted in Puducherry.</strong></div></div>
-      <div class="about-copy"><span class="eyebrow">About Macsur Pharmaa</span><h2>A focused company with a commitment to responsible healthcare.</h2><p>Macsur Pharmaa (India) Private Limited is a privately held company incorporated in Puducherry. This website introduces the company and provides a clear point of contact for prospective business partners and other enquiries.</p><p>Our aim is to communicate company information clearly, build meaningful business relationships and present pharmaceutical information responsibly.</p><div class="vision-mission"><div class="vm-card"><strong>Our vision</strong><p>To build a trusted company presence through responsible practices, clear communication and a focus on healthcare.</p></div><div class="vm-card"><strong>Our mission</strong><p>To develop constructive business relationships and share accurate, company-approved information with every visitor.</p></div></div><a class="btn btn-outline" href="#contact">Connect with our team <span class="arrow">↗</span></a></div>
+      <div class="about-copy"><span class="eyebrow">About Macsur Pharmaa</span><h2>A focused company with a commitment to responsible healthcare.</h2><p>Macsur Pharmaa (India) Private Limited is a privately held company incorporated in Puducherry. This website introduces the company and provides a clear point of contact for prospective business partners and other enquiries.</p><p>Our aim is to communicate company information clearly, build meaningful business relationships and present pharmaceutical information responsibly.</p><div class="company-details" aria-label="Company details">
+        <div class="company-detail"><small>Legal name</small><strong>Macsur Pharmaa (India) Private Limited</strong></div>
+        <div class="company-detail"><small>Incorporated</small><strong>2006 · Puducherry</strong></div>
+        <div class="company-detail"><small>Corporate ID</small><strong>U24232PY2006PTC001957</strong></div>
+        <div class="company-detail"><small>Location</small><strong>Othiyampet, Villianur, Puducherry</strong></div>
+      </div>
+      <div class="vision-mission"><div class="vm-card"><strong>Our vision</strong><p>To build a trusted company presence through responsible practices, clear communication and a focus on healthcare.</p></div><div class="vm-card"><strong>Our mission</strong><p>To develop constructive business relationships and share accurate, company-approved information with every visitor.</p></div></div><a class="btn btn-outline" href="#contact">Connect with our team <span class="arrow">↗</span></a></div>
     </div></section>
     <section class="section approach"><div class="container"><div class="section-head"><span class="eyebrow">Our approach</span><h2>What responsible partnerships should look like.</h2><p>We believe confidence comes from transparency, verified information and direct communication—not unsupported claims.</p></div><div class="approach-grid">
       <article class="approach-card"><span class="approach-num">01 / TRANSPARENCY</span><h3>Clear company information</h3><p>Company identity, location and business contact details presented in an accessible format.</p></article>
@@ -109,6 +142,11 @@
       <article class="form-card"><span class="form-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m8 4 12 12a4.2 4.2 0 0 1-6 6L2 10a4.2 4.2 0 0 1 6-6Z" stroke="currentColor" stroke-width="1.7"/><path d="m7 7 10 10" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Solid dosage forms</h3><p>Tablets and capsules are dosage-form categories that may be described here after current company details are verified.</p></article>
       <article class="form-card"><span class="form-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 7h14l-1 13H6L5 7Z" stroke="currentColor" stroke-width="1.7"/><path d="M4 7h16M9 7V4h6v3" stroke="currentColor" stroke-width="1.7"/></svg></span><h3>Powder preparations</h3><p>Powder dosage-form references can be expanded with approved formats, specifications and product details.</p></article>
       <article class="form-card"><span class="form-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c3.5 4.5 6 7.5 6 11a6 6 0 0 1-12 0c0-3.5 2.5-6.5 6-11Z" stroke="currentColor" stroke-width="1.7"/><path d="M9 15a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span><h3>Future portfolio updates</h3><p>Additional forms or product families should appear only after the company confirms its active portfolio.</p></article>
+    </div></div></section>
+    <section class="section partnership" id="partnership"><div class="container"><div class="section-head"><span class="eyebrow">Business engagement</span><h2>Build the conversation on clear information.</h2><p>Whether you are making an initial enquiry or exploring a longer-term relationship, start with the details that matter.</p></div><div class="partner-grid">
+      <article class="partner-card"><span>01 / INTRODUCE</span><h3>Tell us about your organisation</h3><p>Share your company name, location, role and the best way to reach you.</p></article>
+      <article class="partner-card"><span>02 / DEFINE</span><h3>Describe your requirement</h3><p>Outline the product, documentation or business information you would like to discuss.</p></article>
+      <article class="partner-card"><span>03 / VERIFY</span><h3>Review information together</h3><p>Confirm relevant company details and request applicable documents directly before making business decisions.</p></article>
     </div></div></section>
     <section class="section" id="insights"><div class="container"><div class="section-head"><span class="eyebrow">Knowledge centre</span><h2>Useful information for business visitors.</h2><p>A resource area for company updates, approved documentation and general pharmaceutical industry information.</p></div><div class="insights-grid">
       <article class="insight-card"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Illustrative business documents being reviewed at a desk" loading="lazy"><div class="insight-body"><small>Company information</small><h3>Understanding company credentials</h3><p>Why current corporate records and verified contact information matter when evaluating a business relationship.</p></div></article>
@@ -139,7 +177,7 @@
   </main>
   <footer><div class="container"><div class="footer-main">
     <div class="footer-brand"><a class="brand" href="#home"><span class="brand-symbol"><svg viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="brandGoldFooter" x1="12" y1="74" x2="83" y2="18"><stop stop-color="#b18d4e"/><stop offset=".52" stop-color="#e0c58e"/><stop offset="1" stop-color="#a9874e"/></linearGradient></defs><path class="brand-monogram" d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z"/><path d="M10 70c19 10 49 7 72-14" stroke="url(#brandGoldFooter)" stroke-width="5" stroke-linecap="round"/><path d="M43 39c10-16 23-20 37-17-4 14-14 25-31 25" fill="#7eaa62" stroke="#d8c18f" stroke-width="1.5"/><path d="M47 45c8-7 17-13 27-18" stroke="#f6f3ed" stroke-width="1.6" stroke-linecap="round"/><g transform="rotate(-38 57 65)"><rect x="49" y="56" width="16" height="28" rx="8" fill="url(#brandGoldFooter)" stroke="#f6f3ed" stroke-width="2"/><path d="M49 70h16" stroke="#17352f" stroke-width="1.6"/></g></svg></span><span><span class="brand-name">MACSUR PHARMAA</span><span class="brand-sub">INDIA PRIVATE LIMITED</span></span></a><p>A pharmaceutical company based in Othiyampet, Villianur, Puducherry, India.</p></div>
-    <div class="footer-links"><h4>Explore</h4><a href="#company">About us</a><a href="#categories">Product categories</a><a href="#quality">Quality assurance</a><a href="#insights">Knowledge centre</a></div>
+    <div class="footer-links"><h4>Explore</h4><a href="#company">About us</a><a href="#categories">Product categories</a><a href="#quality">Quality assurance</a><a href="#partnership">Partner with us</a><a href="#insights">Knowledge centre</a></div>
     <div class="footer-links"><h4>Connect</h4><a href="mailto:macsurpharmaa@gmail.com">Email the company</a><a href="#contact">Business enquiries</a><a href="https://www.mca.gov.in/" target="_blank" rel="noopener">MCA portal ↗</a></div>
   </div><div class="footer-bottom"><span>© <span id="year"></span> Macsur Pharmaa (India) Private Limited · Website demonstration</span><span class="footer-disclaimer">Preliminary concept. Images are illustrative stock imagery. Company details, contact information and all product, manufacturing, quality or regulatory statements require company approval before launch.</span></div></div></footer>
   <script>
@@ -149,6 +187,19 @@
     navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰';}));
     document.getElementById('year').textContent=new Date().getFullYear();
     document.getElementById('enquiryForm').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const subject=encodeURIComponent('Business enquiry — Macsur Pharmaa');const body=encodeURIComponent('Name: '+form.get('name')+'\nOrganisation: '+(form.get('organisation')||'Not provided')+'\nEmail: '+form.get('email')+'\nEnquiry type: '+form.get('interest')+'\n\nMessage:\n'+form.get('message'));window.location.href='mailto:macsurpharmaa@gmail.com?subject='+subject+'&body='+body;});
+
+    // Horizontal, touch-friendly tile rails with accessible previous/next controls.
+    document.querySelectorAll('.categories .category-grid,.approach .approach-grid,#quality .quality-cards,.forms .forms-grid,#insights .insights-grid').forEach((track,index)=>{
+      track.classList.add('tile-track');
+      const rail=document.createElement('div');rail.className='tile-rail';
+      track.parentNode.insertBefore(rail,track);rail.appendChild(track);
+      const controls=document.createElement('div');controls.className='tile-controls';
+      controls.innerHTML='<button class="tile-arrow" type="button" aria-label="Scroll cards left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll cards right">›</button>';
+      rail.insertBefore(controls,track);
+      const arrows=controls.querySelectorAll('button');
+      arrows[0].addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'}));
+      arrows[1].addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'}));
+    });
 
     const siteHeader=document.querySelector('.header');
     const updateHeader=()=>siteHeader.classList.toggle('scrolled',window.scrollY>12);
