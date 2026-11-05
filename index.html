@@ -346,8 +346,17 @@
       controls.innerHTML='<button class="tile-arrow" type="button" aria-label="Scroll cards left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll cards right">›</button>';
       rail.insertBefore(controls,track);
       const arrows=controls.querySelectorAll('button');
+      arrows[0].dataset.scrollBound='true';arrows[1].dataset.scrollBound='true';
       arrows[0].addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'}));
       arrows[1].addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'}));
+    });
+
+    document.querySelectorAll('.tile-rail').forEach(rail=>{
+      const track=rail.querySelector('.tile-track');
+      if(!track)return;
+      const arrows=rail.querySelectorAll('.tile-arrow:not([data-scroll-bound])');
+      if(arrows[0]){arrows[0].dataset.scrollBound='true';arrows[0].addEventListener('click',()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'}));}
+      if(arrows[1]){arrows[1].dataset.scrollBound='true';arrows[1].addEventListener('click',()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'}));}
     });
 
     const siteHeader=document.querySelector('.header');
