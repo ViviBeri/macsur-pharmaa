@@ -54,7 +54,7 @@
   
     /* Premium horizontal tile rails */
     .tile-rail{position:relative;margin-top:10px}
-    .tile-track{display:grid;grid-auto-columns:minmax(260px,1fr);grid-auto-flow:column;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 3px 22px;scrollbar-width:thin;scrollbar-color:var(--gold) #e8e4da}
+    .tile-track{display:grid;grid-template-columns:none;grid-auto-columns:minmax(260px,1fr);grid-auto-flow:column;gap:18px;overflow-x:auto;overscroll-behavior-inline:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:8px 3px 22px;scrollbar-width:thin;scrollbar-color:var(--gold) #e8e4da}
     .tile-track>*{min-width:0;scroll-snap-align:start}
     .tile-controls{display:flex;justify-content:flex-end;gap:9px;margin:-2px 0 12px}
     .tile-arrow{width:42px;height:42px;border:1px solid #cfc7b7;background:var(--white);color:var(--green);border-radius:50%;font-size:1.25rem;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
