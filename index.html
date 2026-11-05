@@ -94,9 +94,49 @@
     @media(max-width:700px){.record-grid{grid-template-columns:1fr 1fr}.record-panel{padding:19px}}
     @media(max-width:420px){.record-grid{grid-template-columns:1fr}}
 
+  
+    .preview-ribbon{background:#7d6030;color:#fff9eb;text-align:center;padding:8px 15px;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .demo-tag{display:inline-flex;align-items:center;gap:6px;border:1px solid #d6c49d;background:#f7f0df;color:#765d30;border-radius:30px;padding:5px 9px;font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .demo-tag:before{content:"";width:6px;height:6px;background:#b18d4e;border-radius:50%}
+    .demo-intro{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:-14px 0 25px}
+    .demo-intro p{font-size:.72rem;color:var(--muted);margin:0;max-width:720px}
+    .catalogue-card{background:#fffefa;border:1px solid var(--line);border-radius:7px;overflow:hidden;min-width:0}
+    .catalogue-visual{height:155px;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,#ffffff 0,#e9eee7 55%,#d9e3d8 100%);position:relative;overflow:hidden}
+    .capsule-art{width:120px;height:48px;border-radius:50px;border:2px solid #ffffff;transform:rotate(-32deg);background:linear-gradient(90deg,#d9c08d 0 50%,#315b4a 50%);box-shadow:0 20px 28px #173a3128;position:relative}
+    .capsule-art:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:#ffffffaa}
+    .tablet-art{width:82px;height:82px;border-radius:50%;background:linear-gradient(145deg,#fff,#e3d8bc);border:1px solid #d0c4a8;box-shadow:inset -8px -8px 18px #b9aa8c55,0 18px 26px #173a3122;position:relative}
+    .tablet-art:after{content:"";position:absolute;left:13px;right:13px;top:39px;height:2px;background:#c6b58f;transform:rotate(-25deg)}
+    .powder-art{width:84px;height:98px;border-radius:12px 12px 18px 18px;background:linear-gradient(90deg,#e7dfca,#fff,#d2c4a2);border:1px solid #d2c6aa;box-shadow:0 18px 25px #173a3120;position:relative}
+    .powder-art:before{content:"";position:absolute;left:17px;right:17px;top:-12px;height:17px;background:#315b4a;border-radius:5px}
+    .catalogue-body{padding:19px}.catalogue-body small{font-size:.62rem;color:#947847;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.catalogue-body h3{font:600 1.18rem "Playfair Display",serif;margin:7px 0}.catalogue-body p{font-size:.73rem;color:var(--muted);margin:0 0 13px}.catalogue-meta{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:11px;font-size:.66rem;color:#737b72}
+    .capability-card{background:#fffefa;border:1px solid var(--line);border-radius:7px;padding:24px;min-height:205px;position:relative;overflow:hidden}
+    .capability-card:after{content:"";position:absolute;width:110px;height:110px;border:1px solid #b89b6530;border-radius:50%;right:-35px;bottom:-45px;box-shadow:0 0 0 17px #b89b6510,0 0 0 34px #b89b6508}
+    .capability-card span{font-size:.65rem;color:#927849;font-weight:800;letter-spacing:.13em}
+    .capability-card h3{font:600 1.25rem "Playfair Display",serif;margin:14px 0 8px}
+    .capability-card p{font-size:.75rem;color:var(--muted);margin:0}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+    .timeline-item{border-top:2px solid var(--gold);padding:17px 15px;background:#fffefa;border-radius:0 0 6px 6px}
+    .timeline-item strong{font:600 1.55rem "Playfair Display",serif;color:#947847}
+    .timeline-item h3{font-size:.85rem;margin:8px 0 5px}
+    .timeline-item p{font-size:.7rem;color:var(--muted);margin:0}
+    .leader-card{background:#fffefa;border:1px solid var(--line);border-radius:7px;padding:22px;text-align:center}
+    .leader-avatar{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;margin:0 auto 13px;background:linear-gradient(145deg,#e6ddc9,#f7f5ef);color:#8a744a;font:600 1.45rem "Playfair Display",serif;border:3px solid #fff;box-shadow:0 0 0 1px #d8c9a9}
+    .leader-card h3{font:600 1.05rem "Playfair Display",serif;margin:0 0 4px}
+    .leader-card p{font-size:.7rem;color:var(--muted);margin:0}
+    .document-card{display:flex;align-items:center;gap:14px;padding:16px;background:#fffefa;border:1px solid var(--line);border-radius:6px}
+    .document-icon{width:42px;height:48px;display:grid;place-items:center;background:#f0ebdf;color:#987c4b;border-radius:4px;font-size:1.2rem;flex:none}
+    .document-card strong{display:block;font-size:.78rem}.document-card small{display:block;font-size:.65rem;color:var(--muted);margin-top:3px}
+    .document-state{margin-left:auto;color:#866b3e;font-size:.59rem;font-weight:800;letter-spacing:.08em;text-align:right}
+    .news-card{border:1px solid var(--line);background:#fffefa;border-radius:7px;overflow:hidden}
+    .news-visual{height:130px;background:linear-gradient(135deg,#173a31,#547565);display:grid;place-items:center;color:#e6d5ad;font:600 2.2rem "Playfair Display",serif}
+    .news-body{padding:18px}.news-body small{font-size:.62rem;color:#987c4b;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.news-body h3{font:600 1.05rem "Playfair Display",serif;margin:7px 0}.news-body p{font-size:.72rem;color:var(--muted);margin:0}
+    @media(max-width:800px){.timeline{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.timeline{grid-template-columns:1fr}.demo-intro{align-items:flex-start}}
+
   </style>
 </head>
 <body>
+  <div class="preview-ribbon">Website preview · Sample content is for design review only and is not a verified company statement</div>
   <div class="topbar"><div class="container topbar-inner"><span>Pharmaceutical company · Puducherry, India</span><span><a href="mailto:macsurpharmaa@gmail.com">macsurpharmaa@gmail.com</a></span></div></div>
   <header class="header">
     <div class="container nav">
@@ -129,6 +169,16 @@
         <article class="category-card"><div class="category-image"><img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=900&q=80" alt="Illustrative pharmaceutical powder preparation" loading="lazy"></div><div class="category-body"><small>Dosage form · 03</small><h3>Powders</h3><p>Powder dosage-form category appearing in historical references. Product range and availability are subject to company confirmation.</p></div></article>
       </div>
       <p class="category-note">These categories are not a live product catalogue and do not confirm current manufacturing, approved products, licences or production capacity.</p>
+    </div></section>
+    <section class="section" id="portfolio"><div class="container">
+      <div class="section-head"><span class="eyebrow">Illustrative portfolio</span><h2>A product catalogue experience, ready for real data.</h2><p>This sample catalogue demonstrates how approved products can be browsed. Product names, strengths, compositions, pack sizes and images below are fictional placeholders—not medicines offered by Macsur Pharmaa.</p></div>
+      <div class="demo-intro"><span class="demo-tag">Demo catalogue · fictional entries</span><p>Replace each sample entry with a company-approved product record before launch. Do not use these sample cards for prescribing, purchasing or distribution.</p></div>
+      <div class="tile-rail"><div class="tile-controls"><button class="tile-arrow" type="button" aria-label="Scroll catalogue left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll catalogue right">›</button></div><div class="tile-track">
+        <article class="catalogue-card"><div class="catalogue-visual"><div class="tablet-art"></div></div><div class="catalogue-body"><small>Sample entry · Solid dosage</small><h3>Illustrative Tablet A</h3><p>Placeholder for approved generic name, composition, therapeutic category and product description.</p><div class="catalogue-meta"><span>Strength: To be confirmed</span><span>Pack: Demo</span></div></div></article>
+        <article class="catalogue-card"><div class="catalogue-visual"><div class="capsule-art"></div></div><div class="catalogue-body"><small>Sample entry · Solid dosage</small><h3>Illustrative Capsule B</h3><p>Placeholder for approved composition, dosage form, pack configuration and product information.</p><div class="catalogue-meta"><span>Strength: To be confirmed</span><span>Pack: Demo</span></div></div></article>
+        <article class="catalogue-card"><div class="catalogue-visual"><div class="powder-art"></div></div><div class="catalogue-body"><small>Sample entry · Powder</small><h3>Illustrative Powder C</h3><p>Placeholder for product description, approved pack size, storage information and relevant documents.</p><div class="catalogue-meta"><span>Specification: Demo</span><span>Pack: Demo</span></div></div></article>
+      </div></div>
+      <p class="category-note">All catalogue entries and product artwork in this section are fictional design samples. They do not represent actual medicines or approved products.</p>
     </div></section>
     <section class="section" id="company"><div class="container about-grid">
       <div class="about-visual"><div class="about-photo"><img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1100&q=85" alt="Illustrative pharmaceutical laboratory stock photograph, not a company facility" loading="lazy"></div><div class="about-stamp"><small>Company identity</small><strong>A pharmaceutical presence rooted in Puducherry.</strong></div></div>
@@ -180,6 +230,23 @@
         <div class="record-sources"><a href="https://cdsco.gov.in/opencms/resources/UploadCDSCOWeb/2018/UploadIndustryCommon/Final%20WHO%20GMP%20data%20for%20website%2011.09.2025.pdf" target="_blank" rel="noopener">Open CDSCO WHO-GMP publication (PDF) ↗</a></div>
       </div>
     </div></section>
+    <section class="section" id="journey"><div class="container"><div class="section-head"><span class="eyebrow">Company journey</span><h2>A timeline structure for the company story.</h2><p>The timeline below is a content framework. Only the incorporation date is currently populated from public directory records; other milestones are clearly marked as placeholders.</p></div>
+      <div class="demo-intro"><span class="demo-tag">Draft timeline</span><p>Replace draft milestones with dated evidence and company-approved history.</p></div>
+      <div class="timeline">
+        <article class="timeline-item"><strong>2006</strong><h3>Company incorporation</h3><p>Incorporation date reported as 25 May 2006 in public company-directory records.</p></article>
+        <article class="timeline-item"><strong>Draft</strong><h3>Early business operations</h3><p>Placeholder — company history and commencement details to be supplied.</p></article>
+        <article class="timeline-item"><strong>Draft</strong><h3>Portfolio development</h3><p>Placeholder — verified product and business milestones to be added.</p></article>
+        <article class="timeline-item"><strong>Future</strong><h3>Next chapter</h3><p>Placeholder — approved strategic priorities and future plans.</p></article>
+      </div>
+    </div></section>
+    <section class="section" id="leadership"><div class="container"><div class="section-head"><span class="eyebrow">Leadership</span><h2>The people behind the organisation.</h2><p>Sample profile cards demonstrate the intended layout. Publicly listed director names are shown as provisional directory references; biographies, current appointments and photographs are not yet verified.</p></div>
+      <div class="demo-intro"><span class="demo-tag">Profiles pending verification</span><p>No role, biography or portrait should be treated as confirmed until checked against current company records and approved by the individuals.</p></div>
+      <div class="tile-rail"><div class="tile-controls"><button class="tile-arrow" type="button" aria-label="Scroll leadership left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll leadership right">›</button></div><div class="tile-track">
+        <article class="leader-card"><div class="leader-avatar">CR</div><h3>Chandra Ketchani Rajan</h3><p>Director · public directory reference</p></article>
+        <article class="leader-card"><div class="leader-avatar">GM</div><h3>Geetha Mariappan</h3><p>Director · public directory reference</p></article>
+        <article class="leader-card"><div class="leader-avatar">KM</div><h3>Ketchaani Rajan Makesh</h3><p>Director · public directory reference</p></article>
+      </div></div>
+    </div></section>
     <section class="section approach"><div class="container"><div class="section-head"><span class="eyebrow">Our approach</span><h2>What responsible partnerships should look like.</h2><p>We believe confidence comes from transparency, verified information and direct communication—not unsupported claims.</p></div><div class="approach-grid">
       <article class="approach-card"><span class="approach-num">01 / TRANSPARENCY</span><h3>Clear company information</h3><p>Company identity, location and business contact details presented in an accessible format.</p></article>
       <article class="approach-card"><span class="approach-num">02 / DOCUMENTATION</span><h3>Evidence-led communication</h3><p>Quality, facility and regulatory statements should be supported by current company-approved documents.</p></article>
@@ -204,11 +271,37 @@
       <article class="partner-card"><span>02 / DEFINE</span><h3>Describe your requirement</h3><p>Outline the product, documentation or business information you would like to discuss.</p></article>
       <article class="partner-card"><span>03 / VERIFY</span><h3>Review information together</h3><p>Confirm relevant company details and request applicable documents directly before making business decisions.</p></article>
     </div></div></section>
+    <section class="section" id="capabilities"><div class="container"><div class="section-head"><span class="eyebrow">Operations & capabilities</span><h2>A clear framework for presenting capabilities.</h2><p>These are sample content areas, not statements that Macsur currently performs these activities. Each capability must be confirmed before publication.</p></div>
+      <div class="demo-intro"><span class="demo-tag">Capability placeholders</span><p>Remove any item that is not part of the company's current, licensed and documented operations.</p></div>
+      <div class="tile-rail"><div class="tile-controls"><button class="tile-arrow" type="button" aria-label="Scroll capabilities left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll capabilities right">›</button></div><div class="tile-track">
+        <article class="capability-card"><span>01 / MANUFACTURING</span><h3>Manufacturing operations</h3><p>Sample section for verified dosage forms, facility details, approved licences and actual production capabilities.</p></article>
+        <article class="capability-card"><span>02 / QUALITY</span><h3>Quality control & assurance</h3><p>Sample section for documented QA/QC processes, testing capabilities, quality systems and responsible personnel.</p></article>
+        <article class="capability-card"><span>03 / PACKAGING</span><h3>Packaging & supply</h3><p>Sample section for approved packaging formats, labelling controls, storage and distribution arrangements.</p></article>
+        <article class="capability-card"><span>04 / PARTNERSHIPS</span><h3>Business collaboration</h3><p>Sample section for confirmed third-party, institutional, distribution or other partnership models.</p></article>
+      </div></div>
+    </div></section>
+    <section class="section forms" id="documents"><div class="container"><div class="section-head"><span class="eyebrow">Downloads & documentation</span><h2>Important documents, clearly organised.</h2><p>A document library layout for company-approved records. No sample certificate is presented as a real approval.</p></div>
+      <div class="demo-intro"><span class="demo-tag">Document library mock-up</span><p>Upload original, current documents only after checking issuer, scope, entity name and validity dates.</p></div>
+      <div class="tile-rail"><div class="tile-controls"><button class="tile-arrow" type="button" aria-label="Scroll documents left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll documents right">›</button></div><div class="tile-track">
+        <article class="document-card"><span class="document-icon">PDF</span><div><strong>Company profile</strong><small>Approved corporate introduction · PDF</small></div><span class="document-state">PLACEHOLDER</span></article>
+        <article class="document-card"><span class="document-icon">PDF</span><div><strong>Product catalogue</strong><small>Current approved portfolio · PDF</small></div><span class="document-state">PLACEHOLDER</span></article>
+        <article class="document-card"><span class="document-icon">PDF</span><div><strong>Quality policy</strong><small>Current controlled document · PDF</small></div><span class="document-state">PLACEHOLDER</span></article>
+        <article class="document-card"><span class="document-icon">PDF</span><div><strong>Applicable licences</strong><small>Current and in-scope documents · PDF</small></div><span class="document-state">PLACEHOLDER</span></article>
+      </div></div>
+    </div></section>
     <section class="section" id="insights"><div class="container"><div class="section-head"><span class="eyebrow">Knowledge centre</span><h2>Useful information for business visitors.</h2><p>A resource area for company updates, approved documentation and general pharmaceutical industry information.</p></div><div class="insights-grid">
       <article class="insight-card"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80" alt="Illustrative business documents being reviewed at a desk" loading="lazy"><div class="insight-body"><small>Company information</small><h3>Understanding company credentials</h3><p>Why current corporate records and verified contact information matter when evaluating a business relationship.</p></div></article>
       <article class="insight-card"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Illustrative healthcare professional reviewing information" loading="lazy"><div class="insight-body"><small>Quality & compliance</small><h3>Why quality documents matter</h3><p>A simple introduction to checking the scope, validity and issuing authority of quality documents.</p></div></article>
       <article class="insight-card"><img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=80" alt="Illustrative pharmaceutical packaging" loading="lazy"><div class="insight-body"><small>Business enquiries</small><h3>Preparing a useful business enquiry</h3><p>Share your organisation, enquiry purpose and contact details to help the right team respond.</p></div></article>
     </div></div></section>
+    <section class="section" id="news"><div class="container"><div class="section-head"><span class="eyebrow">Newsroom</span><h2>Company news and industry perspectives.</h2><p>A newsroom preview with sample editorial topics. These are not announcements or published company news.</p></div>
+      <div class="demo-intro"><span class="demo-tag">Editorial placeholders</span><p>Replace with dated, approved news, press releases and genuine company updates.</p></div>
+      <div class="tile-rail"><div class="tile-controls"><button class="tile-arrow" type="button" aria-label="Scroll newsroom left">‹</button><button class="tile-arrow" type="button" aria-label="Scroll newsroom right">›</button></div><div class="tile-track">
+        <article class="news-card"><div class="news-visual">01</div><div class="news-body"><small>Sample editorial topic</small><h3>Understanding pharmaceutical quality systems</h3><p>Draft topic for a future educational article. Not a company announcement.</p></div></article>
+        <article class="news-card"><div class="news-visual">02</div><div class="news-body"><small>Sample editorial topic</small><h3>How to evaluate supplier documentation</h3><p>Draft topic for a future business resource. Not a company announcement.</p></div></article>
+        <article class="news-card"><div class="news-visual">03</div><div class="news-body"><small>Sample editorial topic</small><h3>Responsible pharmaceutical partnerships</h3><p>Draft topic for a future industry insight. Not a company announcement.</p></div></article>
+      </div></div>
+    </div></section>
     <section class="section faq"><div class="container"><div class="section-head"><span class="eyebrow">Frequently asked questions</span><h2>Helpful information before you connect.</h2></div><div class="faq-list">
       <details><summary>Where is Macsur Pharmaa located?</summary><p>The company location presented on this website is Othiyampet, Villianur, Puducherry, India. Please confirm the registered and operational address with the company before formal use.</p></details>
       <details><summary>Can I view the current product catalogue?</summary><p>This demonstration website does not yet publish a verified live catalogue. Please contact the company directly for current product information and availability.</p></details>
@@ -233,7 +326,7 @@
   </main>
   <footer><div class="container"><div class="footer-main">
     <div class="footer-brand"><a class="brand" href="#home"><span class="brand-symbol"><svg viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false"><defs><linearGradient id="brandGoldFooter" x1="12" y1="74" x2="83" y2="18"><stop stop-color="#b18d4e"/><stop offset=".52" stop-color="#e0c58e"/><stop offset="1" stop-color="#a9874e"/></linearGradient></defs><path class="brand-monogram" d="M17 73V25c0-5 6-7 9-3l22 28 22-28c3-4 9-2 9 3v48H64V47L48 67 32 47v26H17Z"/><path d="M10 70c19 10 49 7 72-14" stroke="url(#brandGoldFooter)" stroke-width="5" stroke-linecap="round"/><path d="M43 39c10-16 23-20 37-17-4 14-14 25-31 25" fill="#7eaa62" stroke="#d8c18f" stroke-width="1.5"/><path d="M47 45c8-7 17-13 27-18" stroke="#f6f3ed" stroke-width="1.6" stroke-linecap="round"/><g transform="rotate(-38 57 65)"><rect x="49" y="56" width="16" height="28" rx="8" fill="url(#brandGoldFooter)" stroke="#f6f3ed" stroke-width="2"/><path d="M49 70h16" stroke="#17352f" stroke-width="1.6"/></g></svg></span><span><span class="brand-name">MACSUR PHARMAA</span><span class="brand-sub">INDIA PRIVATE LIMITED</span></span></a><p>A pharmaceutical company based in Othiyampet, Villianur, Puducherry, India.</p></div>
-    <div class="footer-links"><h4>Explore</h4><a href="#company">About us</a><a href="#categories">Product categories</a><a href="#quality">Quality assurance</a><a href="#regulatory-reference">Regulatory reference</a><a href="#partnership">Partner with us</a><a href="#insights">Knowledge centre</a></div>
+    <div class="footer-links"><h4>Explore</h4><a href="#company">About us</a><a href="#categories">Product categories</a><a href="#portfolio">Sample catalogue</a><a href="#capabilities">Capabilities</a><a href="#leadership">Leadership</a><a href="#quality">Quality assurance</a><a href="#documents">Documents</a><a href="#news">Newsroom</a><a href="#regulatory-reference">Regulatory reference</a><a href="#partnership">Partner with us</a><a href="#insights">Knowledge centre</a></div>
     <div class="footer-links"><h4>Connect</h4><a href="mailto:macsurpharmaa@gmail.com">Email the company</a><a href="#contact">Business enquiries</a><a href="https://www.mca.gov.in/" target="_blank" rel="noopener">MCA portal ↗</a></div>
   </div><div class="footer-bottom"><span>© <span id="year"></span> Macsur Pharmaa (India) Private Limited · Website demonstration</span><span class="footer-disclaimer">Preliminary concept. Images are illustrative stock imagery. Company details, contact information and all product, manufacturing, quality or regulatory statements require company approval before launch.</span></div></div></footer>
   <script>
@@ -260,7 +353,7 @@
     const siteHeader=document.querySelector('.header');
     const updateHeader=()=>siteHeader.classList.toggle('scrolled',window.scrollY>12);
     updateHeader();window.addEventListener('scroll',updateHeader,{passive:true});
-    const revealTargets=document.querySelectorAll('.section-head,.category-card,.about-visual,.about-copy,.approach-card,.quality-copy,.quality-card,.form-card,.insight-card,.faq-list details,.contact-copy,.contact-card');
+    const revealTargets=document.querySelectorAll('.section-head,.category-card,.about-visual,.about-copy,.approach-card,.quality-copy,.quality-card,.form-card,.insight-card,.faq-list details,.contact-copy,.contact-card,.catalogue-card,.capability-card,.timeline-item,.leader-card,.document-card,.news-card');
     if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
       document.documentElement.classList.add('motion-ready');
       revealTargets.forEach((el,index)=>{el.classList.add('reveal');if(el.matches('.category-card,.approach-card,.quality-card,.form-card,.insight-card'))el.classList.add('reveal-delay-'+((index%3)+1));});
